@@ -4,7 +4,7 @@ function getPasswordToStore($password, $username) {
 	return md5($username . $password);
 }
 function checkPassword($user, $password) {
-	return $user['password'] == md5($user['username'] . $password);
+	return $user['password'] === md5($user['username'] . $password);
 }
 function getPasswordClientSalt() {
 	return UOJConfig::$data['security']['user']['client_salt'];
